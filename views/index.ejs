@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Search - Indian Penal Code</title>
+  <title>Search - Indian Penal Code </title>
   <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/js/main.js" defer></script>
 </head>
 <body class="p-2">
-
+<h1 class="p-2">
+  <%if(locals.crcp){%>
+<a href="/"
+  class="text-lg font-semibold text-gray-700"
+  >Search Indian Penal Code?</a>
+</h1>
+<% } else { %>
+<a href="/crcp"
+  class="text-lg font-semibold text-gray-700"
+  >Search Code of Criminal Procedure?</a>
+</h1>
+<% } %>
 <div class="flex flex-col space-y-2 p-2">
 	<input
 	class="border border-black text-lg focus:outline-none p-1"

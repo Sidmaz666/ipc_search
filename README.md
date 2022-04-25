@@ -1,3 +1,3 @@
-# Search Indian Penal Code (With Scrapper Script) 
+# Search IPC & CrCP  
 
 ### Live <a href="https://ipcsearching.herokuapp.com/">Link</a>

@@ -15,7 +15,7 @@ async function scrape_chapters() {
   const data = [];
 
   for (let z = 1; total_chapters > z; z++) {
-    const url = `http://devgan.in/ipc/chapter_${addZeroBefore(z)}.php`;
+    const url = `http://devgan.in/crpc/chapter_${addZeroBefore(z)}.php`;
     const req = await axios.get(url);
     const res = await req.data;
     const chapter = z;
