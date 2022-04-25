@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search - Indian Penal Code</title>
+  <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/main.js" defer></script>
+</head>
+<body class="p-2">
+
+<div class="flex flex-col space-y-2 p-2">
+	<input
+	class="border border-black text-lg focus:outline-none p-1"
+	placeholder="Search IPC . ."
+	type="search" name="search" value="" id="search">
+</div>
+
+  <div class="flex p-2 flex-wrap space-y-2">
+  	
+  <% if(locals.items){
+    for(let x in items){
+	  const title = items[x].title
+	  const section = items[x].sid.replace('_',' ')
+	  const desc = items[x].desc
+	  const chapter = items[x].chapter
+  %>
+  
+  	<div 
+	data-desc=<%= desc.replaceAll(' ','-') %>
+	data-title=<%= title.replace('-','_').replaceAll(' ', '-') %>
+	data-section=<%= items[x].sid %>
+	data-chapter=<%= chapter %>
+	class="contain-ipc flex flex-col border border-black w-full p-1">
+  	
+	  <span class="capitalize text-lg font-bold ">
+	   Chapter : <%= chapter %> |  <%= section %> 
+	  </span>
+	  <span class="capitalize text-md font-semibold text-gray-800 p-1 pb-2">
+		title : <%= title %>
+	  </span>
+	  <span class="capitalize text-sm font-mono text-gray-700">
+	    <b>description</b> : <%= desc %>
+	  </span>
+
+  	</div>
+
+	<%
+  	}
+	}
+	%>
+
+  </div>
+
+</body>
+</html>
