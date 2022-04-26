@@ -2,11 +2,11 @@ import axios from "axios";
 import cheerio from "cheerio";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import ipcSchema from "./ipc_model.js";
+import crcpSchema from "./crcp_model.js";
 dotenv.config();
 const db_uri = process.env.DB_URI;
 
-const total_chapters = 24;
+const total_chapters = 38;
 const addZeroBefore = (n) => {
   return (n < 10 ? "0" : "") + n;
 };
@@ -47,15 +47,15 @@ function startSracping() {
         .connect(db_uri, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(async () => {
           for (let i in data) {
-            const ipc = data[i];
-            await new ipcSchema(ipc).save();
+            const crcp = data[i];
+            await new crcpSchema(crcp).save();
           }
         });
     })
     .then(() => {
       console.log(`Database Created`);
     });
-      return;
+  return;
 }
 
 startSracping();
